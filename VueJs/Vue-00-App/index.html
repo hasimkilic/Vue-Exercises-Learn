@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue-02-Todo(mini)</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="nav-bar"></div>
+        <div class="product-display">
+            <div class="product-container">
+                <div class="product-image">
+                    <!--attributeları js dosyasından çekmemizi sağlar.-->
+                    <!--Uzun kullanım hali bu şekilde-->
+                    <!-- <img v-bind:src="image"> -->
+                    <!--Kısa kullanım hali bu şekilde-->
+                    <img :src="image" class="img">
+                    <a :href="url" target="_blank">{{title}}</a>
+
+                </div> 
+            </div>
+        </div>
+        <div class="product-info">
+            <!--bu şekilde dinamik bir gösterim yaparız.-->
+            <h2>{{product}}</h2>
+            <p>{{description}}</p>
+            <!--bu şekilde dinamik bir koşul oluşturabiliriz.-->
+            <!-- <p v-if="inventory > 10" >İn Stock</p>
+            <p v-else-if="inventory <=10 && inventory >0" >Almost sold out</p>
+            <p v-else >Out of Stock</p> -->
+            <p v-if="inStock" >İn Stock</p>
+            <p v-else >Out of Stock</p>
+            <!--Aşağıdaki şekilde for döngüsü kullanıyoruz Js deki forEach methodu kısa kullanım şekli-->
+            <ul>
+                <li v-for="detail in details">{{detail}}</li>
+            </ul>
+            <!-- bu şekilde mouseover eventini parametreli fonksiyon kullanarak örnek yaptık.-->
+            <div v-for="variant in variants" 
+            :key="variant.id"
+             @click"updateImage(variant.image)"
+             class="color-circle"
+             :style="styles">{{variant.color}} - {{variant.star}}
+            </div>
+             <!-- yukarıda :class :style ile js dosyasında yazdığımız kodları çağırıyoruz.-->
+            <ol>
+                <li v-for="size in sizes" >{{size}}</li>
+            </ol>
+            <div>Cart {{cart}}</div>
+            <button class="button"
+             @click="addToCart"
+            >Add to cart</button>
+        </div>
+    </div>
+    <script src="./components/ProductDisplay.js"></script>
+    <script src="app.js"></script>
+    
+</body>
+</html>  
