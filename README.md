@@ -1,2 +1,2 @@
 # First-Vue-Exercises
-Bu repoda Vue3 ile ilgili öğrenme sürecimde yaptığım alıştımaları örnekleri tutacağım.
+Bu repoda Vue3 ile ilgili öğrenme sürecimde yaptığım çalışmaları ve notları tutacağım.
