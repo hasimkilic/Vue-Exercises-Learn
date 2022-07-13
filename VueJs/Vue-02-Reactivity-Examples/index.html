@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reactivity</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+    <div id="app">
+        <!--keyDown komutu ile inputta yazarken listelenir.-->
+        <!--click komutu ile inputta yazdıktan sonra ara tuşuna bastığımızda listelenir.-->
+        <!--@keyDown.enter="searchList" bu komutu eklersek enter tuşuna bastığımız zaman çalışır.-->
+        <input type="text" v-model="search" >
+        <button @click="searchList">Ara</button>
+        <pre>
+            {{itemList}}
+        </pre>
+        <pre>
+            {{filteredList}}
+        </pre>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
