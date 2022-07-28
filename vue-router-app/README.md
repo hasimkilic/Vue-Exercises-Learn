@@ -1,5 +1,7 @@
 # vue-router-vuex-app
 
+### Bu uygulamada vue-router pekiştirmek amacıyla fakeapi kullanarak form listelendiği bir alıştırma,öğrenme uygulaması yaptım.
+
 ## Project setup
 ```
 npm install
